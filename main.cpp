@@ -32,7 +32,7 @@ vector<string> findAnagrams(const string &word, const string &filename) {
   }
 
   while (getline(file, line)) {
-    if (areAnagrams(word, line)) {
+    if (word != line && areAnagrams(word, line)) {
       anagrams.push_back(line);
     }
   }
@@ -42,7 +42,7 @@ vector<string> findAnagrams(const string &word, const string &filename) {
 }
 
 int main() {
-  string word, filename;
+  string word, filename, mode;
 
   // Get the word from the user
   cout << "Enter a word: ";
@@ -56,13 +56,18 @@ int main() {
   vector<string> anagrams = findAnagrams(word, filename);
 
   // Output the results
+  std::ofstream outfile;
+  
+  outfile.open("testruns.txt", std::ios_base::app);
+  int listNumber = 1;
   if (anagrams.empty()) {
-    cout << "No anagrams found for the word '" << word << "' in the file."
+    outfile << "No anagrams found for the word '" << word << "' in the file."
          << endl;
   } else {
-    cout << "Anagrams found for the word '" << word << "':" << endl;
+    outfile << "Anagrams found for the word '" << word << "':" << endl;
     for (const string &anagram : anagrams) {
-      cout << anagram << endl;
+      outfile << listNumber << "." << anagram << endl;
+      listNumber +=1;
     }
   }
 

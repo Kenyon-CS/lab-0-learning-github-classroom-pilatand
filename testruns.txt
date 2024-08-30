@@ -1,0 +1,11 @@
+No anagrams found for the word 'help' in the file.
+Anagrams found for the word 'hips':
+1.phis
+2.pish
+3.ship
+Anagrams found for the word 'raw':
+1.war
+No anagrams found for the word 'makeshift' in the file.
+Anagrams found for the word 'reptile':
+1.peitrel
+2.perlite
